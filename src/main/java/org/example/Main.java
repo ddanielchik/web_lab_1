@@ -1,6 +1,6 @@
 package org.example;
 
-// хз, полный мяу. Говрят убрать статики
+
 
 import com.fastcgi.FCGIInterface;
 
