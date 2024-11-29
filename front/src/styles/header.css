@@ -1,0 +1,34 @@
+header{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: #8A6ED7;
+        padding: 4px;
+        align-items: center;
+        border-bottom: 1px solid #FFE040;
+        transform: scale(1);
+        box-shadow: 0 0 20px 2px #FFE873;
+}
+
+header img {
+        width: 100px;
+        margin: 20px;
+}
+
+img[src="img/github-mark-white.png"]:hover {
+        transition: 0.02s;
+        border-radius: 60%;
+        border: 1px solid #FFE873;
+        transform: scale(1.1);
+        box-shadow: 0 0 20px 2px #FFE873;
+
+}
+
+.student-info{
+        font-family: cursive;
+        color: #FFE873;
+        font-size: 24px;
+        text-align: center;
+        margin: 17px;
+        }
+
+

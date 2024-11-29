@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="styles/header.css" rel="stylesheet" type="text/css"/>
+    <link href="styles/main.css" rel="stylesheet" type="text/css"/>
+    <link href="styles/footer.css" rel="stylesheet" type="text/css"/>
+    <script src="js/validator.js" defer></script>
+
+
+    <title>lab_1</title>
+</head>
+
+<body>
+<header>
+
+    <div class="header-logo">
+        <a href="https://github.com/ddanielchik">
+            <img src="img/github-mark-white.png" alt="github">
+        </a>
+        <!--        <h5>My lab</h5>-->
+    </div>
+
+    <div class="student-info">
+        Medvedeva Daniela Mikhailovna<br>
+        P3230<br>
+        Variant 413006
+    </div>
+</header>
+<!-- Потом как-нибудь все же передалать И обернуть все в грид шутку-->
+<main class="grid-container">
+<!--    <div class="graph">-->
+<!--        <img src="img/pic.svg" alt="graph">-->
+<!--    </div>-->
+    <div id="frame">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <div class="input-block grid-element">
+        <!--        <div class="grid-container-X-radio">-->
+
+        <p>
+            Choose X
+        </p>
+        <div class="x-input">
+            <div class="radio">
+                <input id="radio_-4" type="radio" name="x" value="-4">
+                <label for="radio_-4">-4</label>
+            </div>
+
+            <div class="radio">
+                <input id="radio_-3" type="radio" name="x" value="-3">
+                <label for="radio_-3">-3</label>
+            </div>
+
+            <div class="radio">
+                <input id="radio_-2" type="radio" name="x" value="-2">
+                <label for="radio_-2">-2</label>
+            </div>
+
+            <div class="radio">
+                <input id="radio_-1" type="radio" name="x" value="-1">
+                <label for="radio_-1">-1</label>
+            </div>
+
+            <div class="radio">
+                <input id="radio_0" type="radio" name="x" value="0">
+                <label for="radio_0">0</label>
+            </div>
+
+            <div class="radio">
+                <input id="radio_1" type="radio" name="x" value="1">
+                <label for="radio_1">1</label>
+            </div>
+
+            <div class="radio">
+                <input id="radio_2" type="radio" name="x" value="2">
+                <label for="radio_2">2</label>
+            </div>
+
+            <div class="radio">
+                <input id="radio_3" type="radio" name="x" value="3">
+                <label for="radio_3">3</label>
+            </div>
+
+            <div class="radio">
+                <input id="radio_4" type="radio" name="x" value="4">
+                <label for="radio_4">4</label>
+            </div>
+        </div>
+
+        <div class="y-input">
+            <label for="Y_input" class="input_text">Input Y:</label>
+            <label>
+                <input required name="y" id="Y_input" type="text" placeholder="-5..3" class="input">
+            </label>
+        </div>
+        <div class="r-input">
+            <label for="R_input" class="input_text">Input R:</label>
+            <label>
+                <input required name="r" id="R_input" type="text" placeholder="1..4" class="input">
+            </label>
+        </div>
+
+        <div class="button-container">
+<!--            <button type="button" class="buttons" id="check_button">Check</button>-->
+<!--            <button type="button" class="buttons" id="clear_button">Clear</button>-->
+            <input type="submit" class="buttons" id="submit" value="Send" onclick="sendToServer()">
+            <div class="error_text"  style="display: none;">Try to send again</div>
+        </div>
+    </div>
+
+
+    <!--    <div class="result">-->
+    <table class="table result" id="table-result">
+        <tr class="head-table">
+            <th>x</th>
+            <th>y</th>
+            <th>r</th>
+            <th>status</th>
+            <th>current time</th>
+            <th>script runtime</th>
+        </tr>
+        <tbody id="table-body">
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+        </tbody>
+        <!--        <tr class="head-table">-->
+        <!--            <th>x</th>-->
+        <!--            <th>y</th>-->
+        <!--            <th>r</th>-->
+        <!--            <th>status</th>-->
+        <!--            <th>current time</th>-->
+        <!--            <th>script runtime</th>-->
+        <!--        </tr>-->
+    </table>
+    <!--    </div>-->
+    <script src="js/drawGraph.js"></script>
+</main>
+<footer>
+    <div>
+        <img src="img/kitten.jpg" alt="img/kitten.jpg">
+    </div>
+    <div><p>&copy; Мяу</p></div>
+</footer>
+<!--<script src="script/drawFigure.js"></script>-->
+</body>
+</html>

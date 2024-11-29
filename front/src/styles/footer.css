@@ -1,0 +1,14 @@
+footer{
+    display: grid;
+    background-color: #432C83;
+    padding: 11px;
+    border-bottom: 1px solid #A43DD4;
+    transform: scale(1);
+    box-shadow: 0 0 20px 2px #B165D4;
+    text-align: center;
+}
+
+footer img{
+    width: 150px;
+    height: auto;
+}

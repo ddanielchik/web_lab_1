@@ -1,0 +1,29 @@
+#services:
+#  nginx:
+#    container_name: nginx-web-1
+#    hostname: localhost
+#    image: nginx:1.19.1
+#    ports:
+#      - "80:28023"
+#    volumes:
+#      - .nginx/nginx.conf:/etc/nginx/nginx.conf
+#      - ./web/src:/usr/share/nginx
+#
+
+
+services:
+  nginx-web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - .nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./front/src:/usr/share/nginx
+  fcgi-lab:
+    container_name: fcgi-lab
+    hostname: fcgi-lab
+    build:
+      dockerfile: Dockerfile
+    command: java -DFCGI_PORT=28024 -jar web-lab-1.jar
+    ports:
+      - "28024:28024"
