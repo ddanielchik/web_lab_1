@@ -18,7 +18,6 @@
         <a href="https://github.com/ddanielchik">
             <img src="img/github-mark-white.png" alt="github">
         </a>
-        <!--        <h5>My lab</h5>-->
     </div>
 
     <div class="student-info">
@@ -29,11 +28,11 @@
 </header>
 <!-- Потом как-нибудь все же передалать И обернуть все в грид шутку-->
 <main class="grid-container">
-<!--    <div class="graph">-->
-<!--        <img src="img/pic.svg" alt="graph">-->
-<!--    </div>-->
+
+    <div class="grid-element">
     <div id="frame">
         <canvas id="canvas"></canvas>
+    </div>
     </div>
 
     <div class="input-block grid-element">
@@ -113,6 +112,7 @@
 
     <!--    <div class="result">-->
     <table class="table result" id="table-result">
+        <thead>
         <tr class="head-table">
             <th>x</th>
             <th>y</th>
@@ -121,22 +121,9 @@
             <th>current time</th>
             <th>script runtime</th>
         </tr>
-        <tbody id="table-body">
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-            <th>5</th>
-            <th>6</th>
-        </tbody>
-        <!--        <tr class="head-table">-->
-        <!--            <th>x</th>-->
-        <!--            <th>y</th>-->
-        <!--            <th>r</th>-->
-        <!--            <th>status</th>-->
-        <!--            <th>current time</th>-->
-        <!--            <th>script runtime</th>-->
-        <!--        </tr>-->
+        </thead>
+        <tbody></tbody>
+
     </table>
     <!--    </div>-->
     <script src="js/drawGraph.js"></script>
