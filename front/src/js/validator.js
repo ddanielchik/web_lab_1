@@ -1,12 +1,10 @@
 // пользователь пока ниче не нажал
 let x = null,
     y = null,
-    r= null;
+    r = null;
 
 let formy = document.querySelector('#Y_input');
 let formr = document.querySelector('input[name="r"]');
-
-
 
 
 formy.addEventListener('input', () => {
@@ -19,10 +17,10 @@ formr.addEventListener('input', () => {
     console.log("its r " + r)
 })
 
-function setSelectedX(){
+function setSelectedX() {
     let formx = document.getElementsByName('x');
-    for ( const radio of formx){
-        if (radio.checked){
+    for (const radio of formx) {
+        if (radio.checked) {
             x = radio.value;
         }
 
@@ -31,34 +29,52 @@ function setSelectedX(){
 
 async function sendToServer() {
     setSelectedX()
-    let data = fetch(`http://localhost:8080/fcgi-lab?x=${x}&y=${y}&r=${r}`)
-    let result = await data
-        .then((response)=> response.json())
-    const newX = result.x;
-    const newY = result.y;
-    const newR = result.r;
-    const hit = result.hit;
-    addElementToTable(result)
-    console.log(newX)
-    console.log(newY)
-    console.log(newR)
-    console.log(hit)
+    fetch(`http://localhost:8080/fcgi-lab?x=${x}&y=${y}&r=${r}`)
+        .then(response => response.json())
+        .then(result => {
+            addElementToTable(result)
+            console.log(result)
+            console.log(result.x)
+            console.log(result.y)
+            console.log(result.r)
+            console.log(result.hit)
+        })
+    // if (data.ok) {
+    //     let result = await data.json
+    //     console.log(result.x)
+    //     addElementToTable(result)
+    //
+    //     const newX = result.x
+    //     const newY = result.y
+    //     const newR = result.r
+    //     const hit = result.hit
+    //
+    //     console.log(newX)
+    //     console.log(newY)
+    //     console.log(newR)
+    //     console.log(hit)
+    // }
+
+
 }
 
 function addElementToTable(result) {
     const resultTable = document.getElementById("table-result")
-    const x = result.x
-    const y = result.y
-    const r = result.r
-    const hit = result.hit
-    const htmlTemplate = '<th>${x}</th>' +
-        '<th>${y}</th>' +
-    '<th>${r}</th>' +
-    '<th>${hit}</th>' +
-    '<th>5</th>' +
-    '<th>6</th>'
+        .getElementsByTagName("tbody")[0]
+    const x = result.x;
+    const y = result.y;
+    const r = result.r;
+    const hit = result.hit;
 
-    resultTable.innerText(htmlTemplate)
+    const htmlTemplate = document.createElement("tr")
+
+    htmlTemplate.innerHTML = `
+           <td>${x}</td> 
+            <td>${y}</td>
+            <td>${r}</td> 
+            <td>${hit}</td>
+    `
+    resultTable.appendChild(htmlTemplate);
 }
 
 
@@ -70,7 +86,7 @@ function validateX() {
 
         }
     }
-   //
+    //
 }
 
 function validateY() {
@@ -96,9 +112,11 @@ function validateR() {
     }
     return true;
 }
+
 function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
-function validateAll(){
+
+function validateAll() {
     return (validateR() & validateY() & validateX())
 }
