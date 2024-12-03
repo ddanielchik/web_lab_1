@@ -6,7 +6,7 @@ canvas.height = frame.offsetHeight;
 const ctx = canvas.getContext("2d");
 
 
-
+ctx.beginPath();
 // Прямоугольник
 ctx.fillStyle = "#ded25e";
 ctx.fillRect(canvas.width/2-(canvas.height/3), canvas.height/2,  canvas.height/3, canvas.height/6);
@@ -16,18 +16,20 @@ ctx.moveTo(canvas.width/2, canvas.height/2);
 ctx.lineTo(canvas.width/2, canvas.height/2 + canvas.height/3);
 ctx.moveTo(canvas.width/2, canvas.height/2);
 ctx.lineTo(canvas.width/2-(canvas.height/3), canvas.height/2);
-ctx.arc(canvas.width/2, canvas.height/2, canvas.height/3, Math.PI, 0.5*Math.PI, true);
+ctx.arc(canvas.width/2, canvas.height/2, canvas.height/3, Math.PI, 0- Math.PI/2, false);
 ctx.fill();
+
 
 // Треугольник
-ctx.moveTo(canvas.width/2 + canvas.height/6 ,canvas.height/2);
-ctx.lineTo(canvas.width/2, canvas.height/2);
-ctx.lineTo(canvas.width/2, canvas.height/3);
+ctx.moveTo(canvas.width/2 + canvas.height/3 ,canvas.height/2);// Вершина на оси X
+ctx.lineTo(canvas.width/2, canvas.height/2);// Вершина на оси Y
+ctx.lineTo(canvas.width/2, canvas.height/3); // центр
 ctx.fill();
+
 // Координатная прямая
 
-ctx.fillStyle = "#0000";
-
+ctx.fillStyle = "#000";
+ctx.beginPath();
 ctx.moveTo(canvas.width/2, 0);
 ctx.lineTo(canvas.width/2, canvas.height);
 ctx.moveTo(0, canvas.height/2);
